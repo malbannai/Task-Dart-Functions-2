@@ -1,3 +1,5 @@
+import 'dart:math';
+
 /**
  * greet(name):
  * - receives a name
@@ -8,6 +10,7 @@
  */
 void greet(String name) {
   // Your code here
+  print("Hello $name");
 }
 
 /**
@@ -21,6 +24,7 @@ void greet(String name) {
  */
 bool isOdd(int n) {
   // Your code here
+  return n % 2 == 1;
 }
 
 /**
@@ -34,7 +38,25 @@ bool isOdd(int n) {
  */
 int oddsSmallerThan(int n) {
   // Your code here
+  // int count = 0;
+  // for (int i = n; i > 0; i--) {
+  //   if (i % 2 == 1) {
+  //     count++;
+  //   }
+  // }
+  // return count;
+  return isOdd(n)?(n/2).round()-1: (n/2).round();
 }
+
+/*
+2 => 1
+3 => 1
+4 => 2
+5 => 2 
+6 => 3
+7 => 3
+8 => 4
+*/
 
 /**
  * squareOrDouble(n):
@@ -48,4 +70,8 @@ int oddsSmallerThan(int n) {
  */
 int squareOrDouble(int n) {
   // Your code here
+  if (n % 2 == 1) {
+    return sqrt(n).round();
+  }
+  return n * n;
 }
